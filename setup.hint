@@ -1,0 +1,5 @@
+category: Devel Editors
+requires: gedit libcairo2 libclang libgee2 libglib2.0_0 libgtk3_0 libgtksourceview3.0_0 libpeas1.0_0
+sdesc: "Gedit code assistance plugin for C/C++/ObjC"
+ldesc: "This is a plugin for gedit which provides code assistance for C, 
+C++ and Objective-C by utilizing clang."
