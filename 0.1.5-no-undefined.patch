@@ -1,0 +1,24 @@
+--- origsrc/gedit-code-assistance-0.1.5/backends/c/Makefile.am	2012-10-15 13:46:12.000000000 -0500
++++ src/gedit-code-assistance-0.1.5/backends/c/Makefile.am	2012-12-26 20:29:44.918398000 -0600
+@@ -13,7 +13,8 @@ SOURCES = \
+ libgcpbackendc_la_SOURCES = $(SOURCES)
+ 
+ libgcpbackendc_la_CFLAGS = $(GCP_CFLAGS) $(LLVM_CFLAGS) $(GEDIT_CFLAGS) -I$(top_srcdir)/src -w
+-libgcpbackendc_la_LDFLAGS = -module -shared -avoid-version $(GCP_LIBS) $(LLVM_LIBS)
++libgcpbackendc_la_LDFLAGS = -module -shared -avoid-version -no-undefined
++libgcpbackendc_la_LIBADD = $(top_builddir)/src/libgcp.la $(GCP_LIBS) $(LLVM_LIBS)
+ 
+ valapkgs = 			\
+ 	gio-2.0 		\
+--- origsrc/gedit-code-assistance-0.1.5/src/Makefile.am	2012-10-14 13:48:01.000000000 -0500
++++ src/gedit-code-assistance-0.1.5/src/Makefile.am	2012-12-26 20:30:36.358469000 -0600
+@@ -67,7 +67,8 @@ libgcp_la_VALAFLAGS = \
+ 	--pkg config
+ 
+ libgcp_la_CFLAGS = $(GCP_CFLAGS) $(GEDIT_CFLAGS) -I$(top_srcdir) -w
+-libgcp_la_LDFLAGS = -module -shared -avoid-version $(GCP_LIBS) $(GEDIT_LIBS)
++libgcp_la_LDFLAGS = -module -shared -avoid-version -no-undefined
++libgcp_la_LIBADD = $(GCP_LIBS) $(GEDIT_LIBS)
+ 
+ INTROSPECTION_COMPILER_ARGS = --includedir $(GEDIT_GIR_DIR)
+ 
