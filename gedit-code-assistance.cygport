@@ -1,13 +1,13 @@
 inherit gnome2
 
 NAME="gedit-code-assistance"
-VERSION=0.3.1
+VERSION=3.14.1
 RELEASE=1
 CATEGORY="Editors"
 SUMMARY="Gedit code assistance plugin"
 DESCRIPTION="This is a plugin for gedit which provides code assistance for
 numerous programming languages by utilizing the gnome-code-assistance service."
 
-PATCH_URI="0.3.1-no-undefined.patch"
+PATCH_URI="3.14.1-no-undefined.patch"
 
 REQUIRES="gnome-code-assistance"
